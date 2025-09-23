@@ -27,7 +27,8 @@ export default defineConfig({
     headless: process.env.CI ? true : false,
     viewport: { width: 1920, height: 1080 },
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: `http://${process.env.LOCAL_HOST}:${process.env.LOCAL_PORT}/login`,
+    baseURL: `http://${process.env.LOCAL_HOST}:${process.env.LOCAL_PORT}/`,
+    storageState: '.auth/storageState.json',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -37,6 +38,8 @@ export default defineConfig({
         size: process.env.CI ? {width: 800, height: 600} : {width: 1440, height: 900}
     }
   },
+
+  globalSetup: './global-setup.js',
 
   /* Configure projects for major browsers */
   projects: [

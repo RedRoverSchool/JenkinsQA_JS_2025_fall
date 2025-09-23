@@ -1,16 +1,14 @@
 import { test as base } from "@playwright/test";
-import { cleanData } from "./helpers/cleanData";
+import { cleanData } from "./helpers/cleanData.js";
 
 export const test = base.extend({
-   
-    page: async ({ page }, use) => {
-    
-        await cleanData();
-        await page.goto('/');
-        await page.locator('#j_username').fill(process.env.LOCAL_USERNAME);
-        await page.locator('input[name="j_password"]').fill(process.env.LOCAL_PASSWORD);
-        await page.locator('button[name="Submit"]').click();
+  page: async ({ page, request }, use) => {
+    await cleanData(request);
 
-        await use(page);
-    },
-})
+    await page.goto('/');
+
+    await use(page);
+  },
+});
+
+export const expect = base.expect;
