@@ -1,10 +1,12 @@
 
+const PORT = process.env.LOCAL_PORT;
+const HOST = process.env.LOCAL_HOST
 
 export const cleanData = async () => { 
 	var sessionId;
 
     async function getUrl() {
-      return await page.goto('/');
+      return `http://${HOST}:${PORT}/`;
     }
 
     async function getUserName() {

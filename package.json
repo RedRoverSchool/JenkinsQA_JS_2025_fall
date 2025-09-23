@@ -12,6 +12,7 @@
     "@types/node": "^24.5.2"
   },
   "dependencies": {
-    "dotenv": "^17.2.2"
+    "dotenv": "^17.2.2",
+    "node-fetch": "^3.3.2"
   }
 }
