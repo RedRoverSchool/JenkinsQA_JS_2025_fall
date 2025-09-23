@@ -1,9 +1,7 @@
-// @ts-check
-import { test, expect } from '@playwright/test';
+import { expect } from "@playwright/test";
+import { test } from "../base.js";
 
 test('has title', async ({ page }) => {
-  await page.goto('/');
-
   // Expect a title.
-  await expect(page).toHaveTitle("Sign in [Jenkins]");
+  await expect(page).toHaveTitle('Dashboard [Jenkins]');
 });
