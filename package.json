@@ -1,0 +1,20 @@
+{
+  "name": "jenkinsqa_js_2025_fall",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test" 
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.5.2",
+    "dotenv": "^16.4.5"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
